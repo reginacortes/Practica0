@@ -1,6 +1,6 @@
 # Practica 0: Revisión de Algoritmos y Estructuras de Datos
 
-### **Problema**
+## **Problema**
 
 En el servicio de urgencias de un hospital público llegan, con alta frequencia, pacientes con
 distintos tipos de padecimientos. El administrador del hospital te pide desarrollar un sistema de
@@ -19,9 +19,9 @@ distribución uniforme).
   - Search
   - Delete
 
-### **Ejecución**
+## **Ejecución**
 
-Lista Enlazada
+### ***Lista Enlazada***
 Al utilizar una lista enlazada podemos usar como método de ordenamiento una pila o una cola. En este caso haremos uso de una cola de tal forma que los pacientes queden ordenados en cuanto a nivel de prioridad siendo el primer paciente aquel con mayor urgencia y el que se atienda primero, es decir, 10 siendo la máxima urgencia y 1 siendo la menor. 
 
 Como inicio definimos la clase Nodo en la cual se va a almacenar la información del paciente. Definimos dicha clase como genérica y le agregamos un atributo de formato "int" en el cual se define el nivel de urgencia en el que se encuentra el paciente actualmente, mismo que se puede modificar en cualquier momento y que se utilizará para comparar el nivel de urgencia de los pacientes posteriormente. 
@@ -32,3 +32,5 @@ Al inicio habia pensado hacer una búsqueda del paciente por nivel de urgencia, 
 
 En la clase main, creamos la cola que estaremos utilizando y agregamos pacientes con diferente niveles de urgencia, los cuales son determinados de forma aleatoria hasta tener agregados 100 pacientes diferentes. 
 
+### ***Árbol Binario***
+Un árbol binario se compone de una raíz y nodos hijos. Es una estructura de datos donde la clave de cada nodo interno es mayor a las claves de su subárbol izquiero, pero menor a las claves del subárbol derecho. Cada nodo tiene como máximo dos hijos: uno izquierdo y otro derecho. 

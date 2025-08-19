@@ -27,3 +27,8 @@ Al utilizar una lista enlazada podemos usar como método de ordenamiento una pil
 Como inicio definimos la clase Nodo en la cual se va a almacenar la información del paciente. Definimos dicha clase como genérica y le agregamos un atributo de formato "int" en el cual se define el nivel de urgencia en el que se encuentra el paciente actualmente, mismo que se puede modificar en cualquier momento y que se utilizará para comparar el nivel de urgencia de los pacientes posteriormente. 
 
 Una vez que se incertan los pacientes dentro de la lista enlazada, recorremos la lista obteniendo el nivel de urgencia de cada uno de los pacientes para compararlos entre ellos y tomar el máximo nivel de urgencia y moverlo a la primera posición. Se vuelve a recorrer la lista para obtener las posiciones siguientes restringiendo la longitud de la lista para no volver a comparar aquellos ya anteriormente ordenados. En caso de que existan más de un caso con la misma urgencia, no veremos cambios significativos, ya que se mantendrá el mismo procedimiento. 
+
+Al inicio habia pensado hacer una búsqueda del paciente por nivel de urgencia, sin embargo, me percate de que era erroneo debido a que pueden haber más pacientes con el mismo nivel de gravedad y no podríamos encontrar a aquel paciente específico, por lo que fue necesario agregar un id para poder buscar a cada paciente y de ser el caso hacer una eliminación, reordenamiento, etc.
+
+En la clase main, creamos la cola que estaremos utilizando y agregamos pacientes con diferente niveles de urgencia, los cuales son determinados de forma aleatoria hasta tener agregados 100 pacientes diferentes. 
+

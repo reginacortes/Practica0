@@ -1,6 +1,6 @@
 # Practica 0: Revisión de Algoritmos y Estructuras de Datos
 
-### **Problema**
+## **Problema**
 
 En el servicio de urgencias de un hospital público llegan, con alta frequencia, pacientes con
 distintos tipos de padecimientos. El administrador del hospital te pide desarrollar un sistema de
@@ -19,11 +19,57 @@ distribución uniforme).
   - Search
   - Delete
 
-### **Ejecución**
+## **Ejecución**
 
-Lista Enlazada
+### ***Lista Enlazada***
 Al utilizar una lista enlazada podemos usar como método de ordenamiento una pila o una cola. En este caso haremos uso de una cola de tal forma que los pacientes queden ordenados en cuanto a nivel de prioridad siendo el primer paciente aquel con mayor urgencia y el que se atienda primero, es decir, 10 siendo la máxima urgencia y 1 siendo la menor. 
 
 Como inicio definimos la clase Nodo en la cual se va a almacenar la información del paciente. Definimos dicha clase como genérica y le agregamos un atributo de formato "int" en el cual se define el nivel de urgencia en el que se encuentra el paciente actualmente, mismo que se puede modificar en cualquier momento y que se utilizará para comparar el nivel de urgencia de los pacientes posteriormente. 
 
-Una vez que se incertan los pacientes dentro de la lista enlazada, recorremos la lista obteniendo el nivel de urgencia de cada uno de los pacientes para compararlos entre ellos y tomar el máximo nivel de urgencia y moverlo a la primera posición. Se vuelve a recorrer la lista para obtener las posiciones siguientes restringiendo la longitud de la lista para no volver a comparar aquellos ya anteriormente ordenados. En caso de que existan más de un caso con la misma urgencia, no veremos cambios significativos, ya que se mantendrá el mismo procedimiento. 
+Una vez que se incertan los pacientes dentro de la lista enlazada, recorremos la lista obteniendo el nivel de urgencia de cada uno de los pacientes para compararlos entre ellos y tomar el máximo nivel de urgencia y moverlo a la primera posición. Se vuelve a recorrer la lista para obtener las posiciones siguientes usando un nodo temporal que va recorriendo toda la lista y los va comprarando con el máximo y en caso de que éste sea mayor al considerado máximo, se intercambia de lugar con aquel y se repite el procedimiento hasta tener las posiciones correctas. En caso de que existan más de un caso con la misma urgencia, no veremos cambios significativos, ya que se mantendrá el mismo procedimiento. 
+
+Al inicio habia pensado hacer una búsqueda del paciente por nivel de urgencia, sin embargo, me percate de que era erroneo debido a que pueden haber más pacientes con el mismo nivel de gravedad y no podríamos encontrar a aquel paciente específico, por lo que fue necesario agregar un id para poder buscar a cada paciente y de ser el caso hacer una eliminación, reordenamiento, etc.
+
+ _Resultados Gráfica_
+
+En la clase main, creamos la cola que estaremos utilizando y agregamos pacientes con diferente niveles de urgencia, los cuales son determinados de forma aleatoria hasta tener agregados 1000 pacientes diferentes. Para poder crear una gráfica del tiempo de ejecución de ésta estructura, se puede medir el tiempo que tarda en ejecutarse cada operación como Insertar y Ordenar para luego graficar los resultados. 
+
+Una vez que logramos impormir los tiempos de ejecución, los pasamos y los exportamos a un archivo CSV que después abrimos en Excel para poder crear las gráficas. 
+
+Gráfica de tiempos:
+
+
+<img width="600" height="371" alt="Tiempo - Lista Enlazada (Cola)" src="https://github.com/user-attachments/assets/03656838-0be2-4c30-b41f-dbc3065bbfb4" />
+
+
+
+### ***Árbol Binario***
+Un árbol binario se compone de una raíz y nodos hijos. Es una estructura de datos donde la clave de cada nodo interno es mayor a las claves de su subárbol izquiero, pero menor a las claves del subárbol derecho. Cada nodo tiene como máximo dos hijos: uno izquierdo y otro derecho. Como podemos observar, por definición no es necesario generar un método específico que organice los valores del nivel de urgencia de mayor a menor debido a la forma en la que se organiza el árbol binario desde un principio, por lo que, al insertar los pacientes en el árbol, podemos consultarlos después ya de forma ordenada. 
+
+En la clase árbol no es necesario implementar un id para cada paciente debido a que se usa la misma clase Nodo que se utilizó en la cola. En el método insertar se toman en cuenta dos casos: uno es en donde el dato a agregar, el nivel de urgencia del paciente, es menor al nivel del nodo con el que lo comparamos actualmente. En este caso lo agregamos del lado izquierdo si es que no existe un nodo previo; el otro es donde es el nivel del urgencia es mayor al nivel del nodo actual. En este caso lo agregamos del lado derecho si es que no existe un nodo previo. 
+
+Para agregar el método que elimina una hoja, debemos de tomar en cuenta el número de hijos que dicho nodo a eliminar tiene para saber qué hacer con ellos después de su eliminación. 
+* El nodo no tiene hijos: simplemente se elimina
+* El nodo tiene un hijo: el nodo hijo del nodo a eliminar será hijo ahora del nodo padre del nodo que se eliminó
+* El nodo tiene dos hijos: podemos seleccionar cualquiera de los dos subárboles para poder sustituir a aquel nodo eliminado. Dependiendo de cuál se elija, buscamos el nodo de menor o mayor valor para que sea el sustituto.
+
+Para poder imprimir el árbol es necesario determinar la manera en la que se recorreran sus nodos. Existen varios tipos de recorridos para árboles binarios: 
+  - Inorden: subárbol izquierdo -> raíz -> subárbol derecho
+  - Preorden: raiz -> subárbol izquierdo -> subárbol derecho
+  - Postorden: subárbol izquierdo -> subárbol derecho -> raíz
+
+En nuestro caso haremos uso del inorden debido a que de esa forma se mantiene el orden de mayor urgencia hasta la menor de las urgencias. 
+
+ ### Resultados Gráfica ### 
+
+Acontinuación se presenta la comparación entre ambos métodos para organizar datos. Como podemos observar, se presenta una diferencia considerable entre el tiempo de ejecución de la inserción y el ordenamiento en ambos métodos. Sin embargo, podemos recalcar una diferencia entre el tiempo de ejecución dentro del método de inseción, donde el arbol binario parece tardarse con una diferencia minima pero mayor en comparación con la inserción de la lista enlazada. 
+
+En cuanto al ordenamiento de los pacientes, podemos observar una diferencia un poco más considerable en cuanto a el tiempo que toma el árbol binario en organizar la informacion de mayor a menor en comparación con la lista enlazada. Lo cual tiene sentido debido a que la organización estructural del árbol binario es más complicada que la de una lista enlazada aunque se compongan ambos de la clase Nodo, esto por las reglas y limitaciones del mismo. 
+
+ Gráfica de tiempos:
+
+ <img width="600" height="371" alt="Tiempos de Ejecucion" src="https://github.com/user-attachments/assets/50c5045a-2dc1-4145-84c7-b7b55bca62fb" />
+
+
+
+

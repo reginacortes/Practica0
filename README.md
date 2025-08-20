@@ -30,7 +30,13 @@ Una vez que se incertan los pacientes dentro de la lista enlazada, recorremos la
 
 Al inicio habia pensado hacer una búsqueda del paciente por nivel de urgencia, sin embargo, me percate de que era erroneo debido a que pueden haber más pacientes con el mismo nivel de gravedad y no podríamos encontrar a aquel paciente específico, por lo que fue necesario agregar un id para poder buscar a cada paciente y de ser el caso hacer una eliminación, reordenamiento, etc.
 
+-- Grafica -- 
+
 En la clase main, creamos la cola que estaremos utilizando y agregamos pacientes con diferente niveles de urgencia, los cuales son determinados de forma aleatoria hasta tener agregados 1000 pacientes diferentes. Para poder crear una gráfica del tiempo de ejecución de ésta estructura, se puede medir el tiempo que tarda en ejecutarse cada operación como Insertar y Ordenar para luego graficar los resultados. 
+
+Una vez que logramos impormir los tiempos de ejecución, los pasamos y los exportamos a un archivo CSV que después abrimos en Excel para poder crear las gráficas. 
+
+
 
 ### ***Árbol Binario***
 Un árbol binario se compone de una raíz y nodos hijos. Es una estructura de datos donde la clave de cada nodo interno es mayor a las claves de su subárbol izquiero, pero menor a las claves del subárbol derecho. Cada nodo tiene como máximo dos hijos: uno izquierdo y otro derecho. Como podemos observar, por definición no es necesario generar un método específico que organice los valores del nivel de urgencia de mayor a menor debido a la forma en la que se organiza el árbol binario desde un principio, por lo que, al insertar los pacientes en el árbol, podemos consultarlos después ya de forma ordenada. 

@@ -54,11 +54,22 @@ Para agregar el método que elimina una hoja, debemos de tomar en cuenta el núm
 * El nodo tiene dos hijos: podemos seleccionar cualquiera de los dos subárboles para poder sustituir a aquel nodo eliminado. Dependiendo de cuál se elija, buscamos el nodo de menor o mayor valor para que sea el sustituto.
 
 Para poder imprimir el árbol es necesario determinar la manera en la que se recorreran sus nodos. Existen varios tipos de recorridos para árboles binarios: 
-  - Inorden
-  - Preorden
-  - Postorden
+  - Inorden: subárbol izquierdo -> raíz -> subárbol derecho
+  - Preorden: raiz -> subárbol izquierdo -> subárbol derecho
+  - Postorden: subárbol izquierdo -> subárbol derecho -> raíz
 
-En nuestro caso haremos uso de 
+En nuestro caso haremos uso del inorden debido a que de esa forma se mantiene el orden de mayor urgencia hasta la menor de las urgencias. 
+
+ ### Resultados Gráfica ### 
+
+Acontinuación se presenta la comparación entre ambos métodos para organizar datos. Como podemos observar, se presenta una diferencia considerable entre el tiempo de ejecución de la inserción y el ordenamiento en ambos métodos. Sin embargo, podemos recalcar una diferencia entre el tiempo de ejecución dentro del método de inseción, donde el arbol binario parece tardarse con una diferencia minima pero mayor en comparación con la inserción de la lista enlazada. 
+
+En cuanto al ordenamiento de los pacientes, podemos observar una diferencia un poco más considerable en cuanto a el tiempo que toma el árbol binario en organizar la informacion de mayor a menor en comparación con la lista enlazada. Lo cual tiene sentido debido a que la organización estructural del árbol binario es más complicada que la de una lista enlazada aunque se compongan ambos de la clase Nodo, esto por las reglas y limitaciones del mismo. 
+
+ Gráfica de tiempos:
+
+ <img width="600" height="371" alt="Tiempos de Ejecucion" src="https://github.com/user-attachments/assets/50c5045a-2dc1-4145-84c7-b7b55bca62fb" />
+
 
 
 

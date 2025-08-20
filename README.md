@@ -30,11 +30,16 @@ Una vez que se incertan los pacientes dentro de la lista enlazada, recorremos la
 
 Al inicio habia pensado hacer una búsqueda del paciente por nivel de urgencia, sin embargo, me percate de que era erroneo debido a que pueden haber más pacientes con el mismo nivel de gravedad y no podríamos encontrar a aquel paciente específico, por lo que fue necesario agregar un id para poder buscar a cada paciente y de ser el caso hacer una eliminación, reordenamiento, etc.
 
--- Grafica -- 
+ _Resultados Gráfica_
 
 En la clase main, creamos la cola que estaremos utilizando y agregamos pacientes con diferente niveles de urgencia, los cuales son determinados de forma aleatoria hasta tener agregados 1000 pacientes diferentes. Para poder crear una gráfica del tiempo de ejecución de ésta estructura, se puede medir el tiempo que tarda en ejecutarse cada operación como Insertar y Ordenar para luego graficar los resultados. 
 
 Una vez que logramos impormir los tiempos de ejecución, los pasamos y los exportamos a un archivo CSV que después abrimos en Excel para poder crear las gráficas. 
+
+Gráfica de tiempos:
+
+
+<img width="600" height="371" alt="Tiempo - Lista Enlazada (Cola)" src="https://github.com/user-attachments/assets/03656838-0be2-4c30-b41f-dbc3065bbfb4" />
 
 
 

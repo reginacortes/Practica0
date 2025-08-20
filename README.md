@@ -48,13 +48,17 @@ Un árbol binario se compone de una raíz y nodos hijos. Es una estructura de da
 
 En la clase árbol no es necesario implementar un id para cada paciente debido a que se usa la misma clase Nodo que se utilizó en la cola. En el método insertar se toman en cuenta dos casos: uno es en donde el dato a agregar, el nivel de urgencia del paciente, es menor al nivel del nodo con el que lo comparamos actualmente. En este caso lo agregamos del lado izquierdo si es que no existe un nodo previo; el otro es donde es el nivel del urgencia es mayor al nivel del nodo actual. En este caso lo agregamos del lado derecho si es que no existe un nodo previo. 
 
-Para agregar el método que elimina una hoja, debemos de tomar en cuenta 
+Para agregar el método que elimina una hoja, debemos de tomar en cuenta el número de hijos que dicho nodo a eliminar tiene para saber qué hacer con ellos después de su eliminación. 
+* El nodo no tiene hijos: simplemente se elimina
+* El nodo tiene un hijo: el nodo hijo del nodo a eliminar será hijo ahora del nodo padre del nodo que se eliminó
+* El nodo tiene dos hijos: podemos seleccionar cualquiera de los dos subárboles para poder sustituir a aquel nodo eliminado. Dependiendo de cuál se elija, buscamos el nodo de menor o mayor valor para que sea el sustituto.
 
 Para poder imprimir el árbol es necesario determinar la manera en la que se recorreran sus nodos. Existen varios tipos de recorridos para árboles binarios: 
   - Inorden
   - Preorden
   - Postorden
-En nuestro caso haremos uso de
+
+En nuestro caso haremos uso de 
 
 
 

@@ -60,11 +60,11 @@ Para poder imprimir el árbol es necesario determinar la manera en la que se rec
 
 En nuestro caso haremos uso del inorden debido a que de esa forma se mantiene el orden de mayor urgencia hasta la menor de las urgencias. 
 
- ### Resultados Gráfica ### 
+ ### Resultados - Gráfica - ### 
 
-Acontinuación se presenta la comparación entre ambos métodos para organizar datos. Como podemos observar, se presenta una diferencia considerable entre el tiempo de ejecución de la inserción y el ordenamiento en ambos métodos. Sin embargo, podemos recalcar una diferencia entre el tiempo de ejecución dentro del método de inseción, donde el arbol binario parece tardarse con una diferencia minima pero mayor en comparación con la inserción de la lista enlazada. 
+Acontinuación se presenta la comparación entre los métodos para organizar los datos de los pacientes. Como podemos observar, se presenta una diferencia considerable entre el tiempo de ejecución de la inserción y el ordenamiento en ambos métodos. Sin embargo, podemos recalcar que esta diferencia entre el tiempo de ejecución dentro del método de inseción, tanto en el arbol binario y la lista enlazada, es considerablemente pequeña. Parece haber con una diferencia minima pero mayor, en cuanto al árbol binario, en comparación con la inserción de la lista enlazada. 
 
-En cuanto al ordenamiento de los pacientes, podemos observar una diferencia un poco más considerable en cuanto a el tiempo que toma el árbol binario en organizar la informacion de mayor a menor en comparación con la lista enlazada. Lo cual tiene sentido debido a que la organización estructural del árbol binario es más complicada que la de una lista enlazada aunque se compongan ambos de la clase Nodo, esto por las reglas y limitaciones del mismo. 
+Por otro lado, en el ordenamiento de los pacientes, podemos observar una diferencia un poco más considerable en cuanto a el tiempo que toma el árbol binario en organizar la informacion de mayor a menor en comparación con la lista enlazada. Lo cual tiene sentido debido a que la organización estructural del árbol binario es más complicada que la de una lista enlazada aunque se compongan ambos de la clase Nodo, esto por las reglas y limitaciones del mismo. 
 
  Gráfica de tiempos:
 
